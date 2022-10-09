@@ -211,15 +211,12 @@
 //     };
 //   }
 // };
-const { config } = require("dotenv");
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
 const fs = require("fs");
 const { Scenes, session, Telegraf } = require("telegraf");
-config({
-  path: "functions\\.env",
-});
 const bot = new Telegraf(process.env.TELEGRAM_BOT_API);
 app.use(express.json());
 app.use(cors());
